@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book Store</title>
+</head>
+<body>
+    <div class="navbar bg-base-300 shadow-md shadow-inner">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li>
+                        <a>หมวดหมู่</a>
+                        <ul class="p-2">
+                            <li><a>เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a>การเงินและการลงทุน</a></li>
+                            <li><a>การบริหารธุรกิจ</a></li>
+                            <li><a>นิยาย / วรรณกรรม</a></li>
+                            <li><a>การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </li>
+                    <li><a>หนังสือขายดี</a></li>
+                    <li><a href="ordered.html">คำสั่งซื้อ</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"><i class="fas fa-book fa-lg"></i>Book Store</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="text-lg">หน้าแรก</a></li>
+                <li tabindex="0">
+                    <details>
+                        <summary class="text-lg">หมวดหมู่</summary>
+                        <ul class="p-2 w-60 shadow-md z-10">
+                            <li><a class="text-md">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a class="text-md">การเงินและการลงทุน</a></li>
+                            <li><a class="text-md">การบริหารธุรกิจ</a></li>
+                            <li><a class="text-md">นิยาย / วรรณกรรม</a></li>
+                            <li><a class="text-md">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-lg">หนังสือขายดี</a></li>
+                <li><a class="text-lg" href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="search__wrapper">
+                <input type="text" class="search__field">
+                <button type="submit" class="fa fa-search search__icon"></button>
+            </div>
+            <ul class="px-3">
+                <li><i class="fas fa-shopping-cart fa-lg cursor-pointer zoom" onclick="window.location='cart.html'"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <div class="grid gap-4 grid-cols-6">
+            <!-- Book 1 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book1.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book1" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 2 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book2.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book2" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 3 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book3.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book3" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 4 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book4.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book4" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 5 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book5.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book5" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 6 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book6.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book6" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 7 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book7.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book7" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 8 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book8.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book8" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 9 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book9.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book9" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 10 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book10.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book10" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 11 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book11.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book11" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 12 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="zoom cursor-pointer" onclick="book12.showModal()">
+                <p class="text-lg font-bold px-2 pt-4">สิ่งก่อสร้างและงานระบบ</p>
+                <p class="px-2 pb-2">บ้านและสวน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <dialog id="book12" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สิ่งก่อสร้างและงานระบบ</p><br>
+                            <p>
+                                หนังสือ "Hardscape สิ่งก่อสร้างและงานระบบ" เล่มนี้ ได้รวบรวมความรู้เกี่ยวกับการทำฮาร์ดสเคปหลากหลายประเภทไว้อย่างครบครัน ทั้งรูปแบบฮาร์ดสเคปเพื่อการใช้สอย อาทิ ทางเดิน พื้นลาน เฉลียง ศาลา บันได สะพาน กำแพงกันดิน ฯลฯ ฮาร์ดสเคปเพื่อการตกแต่ง อาทิ บ่อน้ำ น้ำพุ น้ำตก กำแพงประดับ ซุ้ม ระแนงพรางตา ฯลฯ และฮาร์ดสเคปงานระบบ อย่างระบบระบายน้ำ ระบบให้น้ำ และระบบไฟ ซึ่งก่อนลงมือจัดสวนทุกครั้ง ควรทำความเข้าใจถึงแนวทางการออกแบบจัดทำ ประโยชน์ ข้อควรรู้ ข้อควรระวัง และผลกระทบที่อาจเกิดขึ้นได้หากจัดทำไม่ถูกต้อง เพื่อวางแผนการทำงานได้ง่ายขึ้น ทำให้สิ่งก่อสร้างเหล่านี้ ดูกลมกลืนสวยงามและเป็นส่วนหนึ่งของสวน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>10</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </div>
+</body>
+</html>

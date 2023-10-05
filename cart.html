@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cart</title>
+</head>
+<body>
+    <div class="navbar bg-base-300 shadow-md shadow-inner">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li>
+                        <a>หมวดหมู่</a>
+                        <ul class="p-2">
+                            <li><a>เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a>การเงินและการลงทุน</a></li>
+                            <li><a>การบริหารธุรกิจ</a></li>
+                            <li><a>นิยาย / วรรณกรรม</a></li>
+                            <li><a>การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </li>
+                    <li><a>หนังสือขายดี</a></li>
+                    <li><a href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"><i class="fas fa-book fa-lg"></i>Book Store</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="text-lg">หน้าแรก</a></li>
+                <li tabindex="0">
+                    <details>
+                        <summary class="text-lg">หมวดหมู่</summary>
+                        <ul class="p-2 w-60 shadow-md z-10">
+                            <li><a class="text-md">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a class="text-md">การเงินและการลงทุน</a></li>
+                            <li><a class="text-md">การบริหารธุรกิจ</a></li>
+                            <li><a class="text-md">นิยาย / วรรณกรรม</a></li>
+                            <li><a class="text-md">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-lg">หนังสือขายดี</a></li>
+                <li><a class="text-lg" href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="search__wrapper">
+                <input type="text" name="" class="search__field">
+                <button type="submit" class="fa fa-search search__icon"></button>
+            </div>
+            <ul class="px-3">
+                <li><a class="cursor-pointer"><i class="fas fa-shopping-cart fa-lg" onclick="cart.showModal()"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto px-20 py-4">
+        <table class="table text-lg">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-xl font-bold text-center">รูป</th>
+                    <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
+                    <th class="text-xl font-bold text-center">ราคา</th>
+                    <th class="text-xl font-bold text-center">จำนวน</th>
+                    <th class="text-xl font-bold text-center">ราคารวม</th>
+                    <th class="text-xl font-bold text-center">ลบ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover">
+                    <th class="text-center">1</th>
+                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                    <td>สิ่งก่อสร้างและงานระบบ</td>
+                    <td class="text-center">฿ 345.00</td>
+                    <td class="text-center"><input type="number" class="input input-bordered input-info input-sm w-16 max-w-xs" value="1" min="1" max="10"/></td>
+                    <td class="text-center">฿ 345.00</td>
+                    <td class="text-center"><i class="fas fa-trash cursor-pointer zoom"></i></td>
+                </tr>
+                <tr class="hover">
+                    <th class="text-center">2</th>
+                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                    <td>สิ่งก่อสร้างและงานระบบ</td>
+                    <td class="text-center">฿ 345.00</td>
+                    <td class="text-center"><input type="number" class="input input-bordered input-info input-sm w-16 max-w-xs" value="1" min="1" max="10"/></td>
+                    <td class="text-center">฿ 345.00</td>
+                    <td class="text-center"><i class="fas fa-trash cursor-pointer zoom"></i></td>
+                </tr>
+                <tr class="hover">
+                    <th class="text-center">3</th>
+                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                    <td>สิ่งก่อสร้างและงานระบบ</td>
+                    <td class="text-center">฿ 345.00</td>
+                    <td class="text-center"><input type="number" class="input input-bordered input-info input-sm w-16 max-w-xs" value="1" min="1" max="10"/></td>
+                    <td class="text-center">฿ 345.00</td>
+                    <td class="text-center"><i class="fas fa-trash cursor-pointer zoom"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="flex p-4 justify-between">
+            <button class="btn bg-gray-300 hover:bg-gray-200 focus:ring focus:ring-gray-300 shadow-lg" onclick="window.history.back()"><i class="fas fa-chevron-left"></i>ย้อนกลับ</button>&emsp;
+            <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-lg" onclick="address.showModal()"><i class="fas fa-money-bill-wave fa-lg"></i>ชำระเงิน</button>
+        </div>
+    </div>
+
+    <dialog id="address" class="modal">
+        <div class="modal-box w-11/12 max-w-5xl">
+            <p class="text-center text-2xl font-bold">สถานที่จัดส่ง</p>
+            <div class="grid grid-cols-2 gap-4 pt-5">
+                <div class="form-control">
+                    <label class="input-group">
+                        <span class="w-28">ชื่อผู้รับ</span>
+                        <input type="text" placeholder="ชื่อผู้รับ" class="input input-bordered w-full" />
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label class="input-group">
+                        <span class="w-48">เบอร์โทรศัพท์</span>
+                        <input type="text" placeholder="เบอร์โทรศัพท์" maxlength="10" class="input input-bordered w-full" />
+                    </label>
+                </div>
+                <div class="form-control col-span-2">
+                    <label class="input-group">
+                        <span class="w-32">ที่อยู่จัดส่ง</span>
+                        <textarea type="text" placeholder="บ้านเลขที่ หมู่บ้าน ซอย ถนน" class="input input-bordered w-full pt-2.5"></textarea>
+                    </label>
+                </div>
+                <div class="form-control w-full max-w-5xl">
+                    <label class="input-group">
+                        <span class="w-28">จังหวัด</span>
+                        <select class="select select-bordered w-full">
+                            <option disabled selected>เลือกจังหวัด</option>
+                            <option>กรุงเทพมหานคร</option>
+                            <option>กระบี่</option>
+                            <option>กาญจนบุรี</option>
+                            <option>กาฬสินธุ์</option>
+                            <option>กำแพงเพชร</option>
+                            <option>ขอนแก่น</option>
+                            <option>จันทบุรี</option>
+                            <option>ฉะเชิงเทรา</option>
+                            <option>ชลบุรี</option>
+                            <option>ชัยนาท</option>
+                            <option>ชัยภูมิ</option>
+                            <option>ชุมพร</option>
+                            <option>เชียงราย</option>
+                            <option>เชียงใหม่</option>
+                            <option>ตรัง</option>
+                            <option>ตราด</option>
+                            <option>ตาก</option>
+                            <option>นครนายก</option>
+                            <option>นครปฐม</option>
+                            <option>นครพนม</option>
+                            <option>นครราชสีมา</option>
+                            <option>นครศรีธรรมราช</option>
+                            <option>นครสวรรค์</option>
+                            <option>นนทบุรี</option>
+                            <option>นราธิวาส</option>
+                            <option>น่าน</option>
+                            <option>บึงกาฬ</option>
+                            <option>บุรีรัมย์</option>
+                            <option>ปทุมธานี</option>
+                            <option>ประจวบคีรีขันธ์</option>
+                            <option>ปราจีนบุรี</option>
+                            <option>ปัตตานี</option>
+                            <option>พระนครศรีอยุธยา</option>
+                            <option>พังงา</option>
+                            <option>พัทลุง</option>
+                            <option>พิจิตร</option>
+                            <option>พิษณุโลก</option>
+                            <option>เพชรบุรี</option>
+                            <option>เพชรบูรณ์</option>
+                            <option>แพร่</option>
+                            <option>พะเยา</option>
+                            <option>ภูเก็ต</option>
+                            <option>มหาสารคาม</option>
+                            <option>มุกดาหาร</option>
+                            <option>แม่ฮ่องสอน</option>
+                            <option>ยะลา</option>
+                            <option>ยโสธร</option>
+                            <option>ร้อยเอ็ด</option>
+                            <option>ระนอง</option>
+                            <option>ระยอง</option>
+                            <option>ราชบุรี</option>
+                            <option>ลพบุรี</option>
+                            <option>ลำปาง</option>
+                            <option>ลำพูน</option>
+                            <option>เลย</option>
+                            <option>ศรีสะเกษ</option>
+                            <option>สกลนคร</option>
+                            <option>สงขลา</option>
+                            <option>สตูล</option>
+                            <option>สมุทรปราการ</option>
+                            <option>สมุทรสงคราม</option>
+                            <option>สมุทรสาคร</option>
+                            <option>สระแก้ว</option>
+                            <option>สระบุรี</option>
+                            <option>สิงห์บุรี</option>
+                            <option>สุโขทัย</option>
+                            <option>สุพรรณบุรี</option>
+                            <option>สุราษฎร์ธานี</option>
+                            <option>สุรินทร์</option>
+                            <option>หนองคาย</option>
+                            <option>หนองบัวลำภู</option>
+                            <option>อ่างทอง</option>
+                            <option>อุดรธานี</option>
+                            <option>อุทัยธานี</option>
+                            <option>อุตรดิตถ์</option>
+                            <option>อุบลราชธานี</option>
+                            <option>อำนาจเจริญ</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label class="input-group">
+                        <span class="w-44">รหัสไปรษณีย์</span>
+                        <input type="text" placeholder="ชื่อผู้รับ"maxlength="5"  class="input input-bordered w-full" />
+                    </label>
+                </div>
+                <div class="form-control col-span-2">
+                    <label class="input-group">
+                        <span class="w-52">หมายเหตุเพิ่มเติม</span>
+                        <textarea type="text" placeholder="หมายเหตุเพิ่มเติม" class="input input-bordered w-full pt-2.5"></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                    <button class="btn bg-green-400 hover:bg-green-500 focus:ring focus:ring-green-300 shadow-sm" onclick="payment.showModal()">ถัดไป<i class="fas fa-chevron-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="payment" class="modal">
+        <div class="modal-box w-11/12 max-w-5xl">
+            <p class="text-center text-2xl font-bold">ชำระเงิน</p>
+            <div class="form-control pt-4">
+                <div tabindex="0" class="collapse border border-base-300 bg-base-200 focus:bg-green-200 focus:border-green-500">
+                    <div class="collapse-title font-bold">
+                        ชำระผ่าน ธนาคาร
+                    </div>
+                    <div class="collapse-content">
+                        <p>
+                            ชื่อบัญชี : บริษัท หนังสือ จำกัด<br>
+                            ธนาคาร : กสิกรไทย<br>
+                            เลขที่บัญชี : 086-2-10519-2
+                        </p>
+                    </div>
+                </div>
+                <div class="py-1"></div>
+                <div tabindex="0" class="collapse border border-base-300 bg-base-200 focus:bg-green-200 focus:border-green-500">
+                    <div class="collapse-title py-2">
+                        <img src="img/ThaiQR.jpg" class="w-24 h-10 object-cover">
+                    </div>
+                    <div class="collapse-content">
+                        <img src="img/QR.jpeg" class="w-48">
+                    </div>
+                </div>
+                <div class="py-1"></div>
+                <div tabindex="0" class="collapse border border-base-300 bg-base-200 focus:bg-green-200 focus:border-green-500">
+                    <div class="collapse-title font-bold">
+                        ชำระเงินปลายทาง
+                    </div>
+                    <div class="collapse-content">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn bg-gray-300 shadow-sm" onclick="address.showModal()"><i class="fas fa-chevron-left"></i>ย้อนกลับ</button>&emsp;
+                </form>
+                <button class="btn bg-green-400 hover:bg-green-500 focus:ring focus:ring-green-300 shadow-sm" onclick="window.location='ordered.html'">ยืนยัน<i class="fas fa-check"></i></button>
+            </div>
+        </div>
+    </dialog>
+</body>
+</html>

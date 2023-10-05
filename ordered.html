@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar bg-base-300 shadow-md shadow-inner">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li>
+                        <a>หมวดหมู่</a>
+                        <ul class="p-2">
+                            <li><a>เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a>การเงินและการลงทุน</a></li>
+                            <li><a>การบริหารธุรกิจ</a></li>
+                            <li><a>นิยาย / วรรณกรรม</a></li>
+                            <li><a>การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </li>
+                    <li><a>หนังสือขายดี</a></li>
+                    <li><a href="ordered.html">คำสั่งซื้อ</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"><i class="fas fa-book fa-lg"></i>Book Store</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="text-lg">หน้าแรก</a></li>
+                <li tabindex="0">
+                    <details>
+                        <summary class="text-lg">หมวดหมู่</summary>
+                        <ul class="p-2 w-60 shadow-md z-10">
+                            <li><a class="text-md">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a class="text-md">การเงินและการลงทุน</a></li>
+                            <li><a class="text-md">การบริหารธุรกิจ</a></li>
+                            <li><a class="text-md">นิยาย / วรรณกรรม</a></li>
+                            <li><a class="text-md">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-lg">หนังสือขายดี</a></li>
+                <li><a class="text-lg" href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="search__wrapper">
+                <input type="text" name="" class="search__field">
+                <button type="submit" class="fa fa-search search__icon"></button>
+            </div>
+            <ul class="px-3">
+                <li><i class="fas fa-shopping-cart fa-lg cursor-pointer zoom" onclick="window.location='cart.html'"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto px-20 py-4">
+        <center>
+            <ul class="steps gap-4">
+                <li class="step step-info">
+                    ยืนยันคำสั่งซื้อ<br>
+                    <b>08/10/2023</b>
+                </li>
+                <li class="step step-info">
+                    ชำระเงินสำเร็จ<br>
+                    <b>ชำระปลายทาง</b>
+                </li>
+                <li class="step step-info">กำลังเตรียมพัสดุ</li>
+                <li class="step" data-content="!">นำส่งแล้ว</li>
+            </ul>
+        </center>
+        <br>
+        <table class="table text-lg">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-xl font-bold text-center">รูป</th>
+                    <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
+                    <th class="text-xl font-bold text-center">จำนวน</th>
+                    <th class="text-xl font-bold text-center">ราคา</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover">
+                    <td class="text-center">1</td>
+                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                    <td>สิ่งก่อสร้างและงานระบบ</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">฿ 345.00</td>
+                </tr>
+                <tr class="hover">
+                    <td class="text-center">2</td>
+                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                    <td>สิ่งก่อสร้างและงานระบบ</td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">฿ 690.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br><hr style="border: 2px solid; border-radius: 1rem;"><br>
+
+        <center>
+            <ul class="steps gap-4">
+                <li class="step step-success">
+                    ยืนยันคำสั่งซื้อ<br>
+                    <b>01/10/2023</b>
+                </li>
+                <li class="step step-success">
+                    ชำระเงินสำเร็จ<br>
+                    <b>ธนาคาร</b>
+                </li>
+                <li class="step step-success">กำลังเตรียมพัสดุ</li>
+                <li class="step step-success">
+                    นำส่งแล้ว<br>
+                    <b>เลขพัสดุ : EB838799922TH</b>
+                </li>
+            </ul>
+        </center>
+        <br>
+        <table class="table text-lg">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-xl font-bold text-center">รูป</th>
+                    <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
+                    <th class="text-xl font-bold text-center">จำนวน</th>
+                    <th class="text-xl font-bold text-center">ราคา</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover">
+                    <td class="text-center">1</td>
+                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                    <td>สิ่งก่อสร้างและงานระบบ</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">฿ 345.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br><hr style="border: 2px solid; border-radius: 1rem;"><br>
+
+        <center>
+            <ul class="steps gap-4">
+                <li class="step step-success">
+                    ยืนยันคำสั่งซื้อ<br>
+                    <b>23/09/2023</b>
+                </li>
+                <li class="step step-success">
+                    ชำระเงินสำเร็จ<br>
+                    <b>QR Payment</b>
+                </li>
+                <li class="step step-success">กำลังเตรียมพัสดุ</li>
+                <li class="step step-success">
+                    นำส่งแล้ว<br>
+                    <b>เลขพัสดุ : EB814421535TH</b>
+                </li>
+            </ul>
+        </center>
+        <br>
+        <table class="table text-lg">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-xl font-bold text-center">รูป</th>
+                    <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
+                    <th class="text-xl font-bold text-center">จำนวน</th>
+                    <th class="text-xl font-bold text-center">ราคา</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover">
+                    <td class="text-center">1</td>
+                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                    <td>สิ่งก่อสร้างและงานระบบ</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">฿ 345.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br><hr style="border: 2px solid; border-radius: 1rem;"><br>
+    </div>
+</body>
+</html>
