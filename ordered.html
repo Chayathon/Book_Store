@@ -6,6 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Ordered</title>
 </head>
@@ -65,132 +67,143 @@
     </div>
 
     <div class="overflow-x-auto px-20 py-4">
-        <center>
-            <ul class="steps gap-4">
-                <li class="step step-info">
-                    ยืนยันคำสั่งซื้อ<br>
-                    <b>08/10/2023</b>
-                </li>
-                <li class="step step-info">
-                    ชำระเงินสำเร็จ<br>
-                    <b>ชำระปลายทาง</b>
-                </li>
-                <li class="step step-info">กำลังเตรียมพัสดุ</li>
-                <li class="step" data-content="!">นำส่งแล้ว</li>
-            </ul>
-        </center>
-        <br>
-        <table class="table text-lg">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th class="text-xl font-bold text-center">รูป</th>
-                    <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
-                    <th class="text-xl font-bold text-center">จำนวน</th>
-                    <th class="text-xl font-bold text-center">ราคา</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="hover">
-                    <td class="text-center">1</td>
-                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
-                    <td>สิ่งก่อสร้างและงานระบบ</td>
-                    <td class="text-center">1</td>
-                    <td class="text-center">฿ 345.00</td>
-                </tr>
-                <tr class="hover">
-                    <td class="text-center">2</td>
-                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
-                    <td>สิ่งก่อสร้างและงานระบบ</td>
-                    <td class="text-center">2</td>
-                    <td class="text-center">฿ 690.00</td>
-                </tr>
-            </tbody>
-        </table>
+        <div data-aos="fade-right">
+            <center>
+                <ul class="steps gap-4">
+                    <li class="step step-info">
+                        ยืนยันคำสั่งซื้อ<br>
+                        <b>08/10/2023</b>
+                    </li>
+                    <li class="step step-info">
+                        ชำระเงินสำเร็จ<br>
+                        <b>ชำระปลายทาง</b>
+                    </li>
+                    <li class="step step-info">กำลังเตรียมพัสดุ</li>
+                    <li class="step" data-content="!">นำส่งแล้ว</li>
+                </ul>
+            </center>
+            <br>
+            <table class="table text-lg">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-xl font-bold text-center">รูป</th>
+                        <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
+                        <th class="text-xl font-bold text-center">จำนวน</th>
+                        <th class="text-xl font-bold text-center">ราคา</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover">
+                        <td class="text-center">1</td>
+                        <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                        <td>สิ่งก่อสร้างและงานระบบ</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">฿ 345.00</td>
+                    </tr>
+                    <tr class="hover">
+                        <td class="text-center">2</td>
+                        <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                        <td>สิ่งก่อสร้างและงานระบบ</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">฿ 690.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <br><hr style="border: 2px solid; border-radius: 1rem;"><br>
 
-        <center>
-            <ul class="steps gap-4">
-                <li class="step step-success">
-                    ยืนยันคำสั่งซื้อ<br>
-                    <b>01/10/2023</b>
-                </li>
-                <li class="step step-success">
-                    ชำระเงินสำเร็จ<br>
-                    <b>ธนาคาร</b>
-                </li>
-                <li class="step step-success">กำลังเตรียมพัสดุ</li>
-                <li class="step step-success">
-                    นำส่งแล้ว<br>
-                    <b>เลขพัสดุ : EB838799922TH</b>
-                </li>
-            </ul>
-        </center>
-        <br>
-        <table class="table text-lg">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th class="text-xl font-bold text-center">รูป</th>
-                    <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
-                    <th class="text-xl font-bold text-center">จำนวน</th>
-                    <th class="text-xl font-bold text-center">ราคา</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="hover">
-                    <td class="text-center">1</td>
-                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
-                    <td>สิ่งก่อสร้างและงานระบบ</td>
-                    <td class="text-center">1</td>
-                    <td class="text-center">฿ 345.00</td>
-                </tr>
-            </tbody>
-        </table>
+        <div data-aos="fade-right">
+            <center>
+                <ul class="steps gap-4">
+                    <li class="step step-success">
+                        ยืนยันคำสั่งซื้อ<br>
+                        <b>01/10/2023</b>
+                    </li>
+                    <li class="step step-success">
+                        ชำระเงินสำเร็จ<br>
+                        <b>ธนาคาร</b>
+                    </li>
+                    <li class="step step-success">กำลังเตรียมพัสดุ</li>
+                    <li class="step step-success">
+                        นำส่งแล้ว<br>
+                        <b>เลขพัสดุ : EB838799922TH</b>
+                    </li>
+                </ul>
+            </center>
+            <br>
+            <table class="table text-lg">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-xl font-bold text-center">รูป</th>
+                        <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
+                        <th class="text-xl font-bold text-center">จำนวน</th>
+                        <th class="text-xl font-bold text-center">ราคา</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover">
+                        <td class="text-center">1</td>
+                        <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                        <td>สิ่งก่อสร้างและงานระบบ</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">฿ 345.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <br><hr style="border: 2px solid; border-radius: 1rem;"><br>
 
-        <center>
-            <ul class="steps gap-4">
-                <li class="step step-success">
-                    ยืนยันคำสั่งซื้อ<br>
-                    <b>23/09/2023</b>
-                </li>
-                <li class="step step-success">
-                    ชำระเงินสำเร็จ<br>
-                    <b>QR Payment</b>
-                </li>
-                <li class="step step-success">กำลังเตรียมพัสดุ</li>
-                <li class="step step-success">
-                    นำส่งแล้ว<br>
-                    <b>เลขพัสดุ : EB814421535TH</b>
-                </li>
-            </ul>
-        </center>
-        <br>
-        <table class="table text-lg">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th class="text-xl font-bold text-center">รูป</th>
-                    <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
-                    <th class="text-xl font-bold text-center">จำนวน</th>
-                    <th class="text-xl font-bold text-center">ราคา</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="hover">
-                    <td class="text-center">1</td>
-                    <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
-                    <td>สิ่งก่อสร้างและงานระบบ</td>
-                    <td class="text-center">1</td>
-                    <td class="text-center">฿ 345.00</td>
-                </tr>
-            </tbody>
-        </table>
+        
+        <div data-aos="fade-right">
+            <center>
+                <ul class="steps gap-4">
+                    <li class="step step-success">
+                        ยืนยันคำสั่งซื้อ<br>
+                        <b>23/09/2023</b>
+                    </li>
+                    <li class="step step-success">
+                        ชำระเงินสำเร็จ<br>
+                        <b>QR Payment</b>
+                    </li>
+                    <li class="step step-success">กำลังเตรียมพัสดุ</li>
+                    <li class="step step-success">
+                        นำส่งแล้ว<br>
+                        <b>เลขพัสดุ : EB814421535TH</b>
+                    </li>
+                </ul>
+            </center>
+            <br>
+            <table class="table text-lg">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-xl font-bold text-center">รูป</th>
+                        <th class="text-xl font-bold text-center">ชื่อหนังสือ</th>
+                        <th class="text-xl font-bold text-center">จำนวน</th>
+                        <th class="text-xl font-bold text-center">ราคา</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover">
+                        <td class="text-center">1</td>
+                        <td><center><img src="https://pim-cdn0.ofm.co.th/products/large/DA05005.jpg" class="place-self-center w-28"></center></td>
+                        <td>สิ่งก่อสร้างและงานระบบ</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">฿ 345.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <br><hr style="border: 2px solid; border-radius: 1rem;"><br>
     </div>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

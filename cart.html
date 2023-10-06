@@ -6,6 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Cart</title>
 </head>
@@ -65,7 +67,7 @@
     </div>
 
     <div class="overflow-x-auto px-20 py-4">
-        <table class="table text-lg">
+        <table class="table text-lg" data-aos="fade-up">
             <thead>
                 <tr>
                     <th></th>
@@ -284,5 +286,9 @@
             </div>
         </div>
     </dialog>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
