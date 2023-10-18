@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book Store</title>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar bg-base-300 shadow-md shadow-inner">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li>
+                        <a>หมวดหมู่</a>
+                        <ul class="p-2">
+                            <li><a href="book_type1.html">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </li>
+                    <li><a>หนังสือขายดี</a></li>
+                    <li><a href="ordered.html">คำสั่งซื้อ</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"><i class="fas fa-book fa-lg"></i>Book Store</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="text-lg">หน้าแรก</a></li>
+                <li tabindex="0">
+                    <details>
+                        <summary class="text-lg">หมวดหมู่</summary>
+                        <ul class="p-2 w-60 shadow-md z-10">
+                            <li><a href="book_type1.html" class="text-md">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html" class="text-md">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html" class="text-md">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html" class="text-md">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html" class="text-md">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-lg">หนังสือขายดี</a></li>
+                <li><a class="text-lg" href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="search__wrapper">
+                <input type="text" class="search__field">
+                <button type="submit" class="fa fa-search search__icon"></button>
+            </div>
+            <ul class="px-3">
+                <li><i class="fas fa-shopping-cart fa-lg cursor-pointer zoom" onclick="window.location='cart.html'"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            <!-- Book 25 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA04777.jpg" class="h-56 zoom cursor-pointer" onclick="book25.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ผู้ประกอบการวันหยุด</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 175.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1229</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 25 -->
+            <dialog id="book25" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA04777.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ผู้ประกอบการวันหยุด</p><br>
+                            <p>
+                                ในยุค New Normal การมีรายได้ทางเดียวจากงานประจำเป็นสิ่งที่น่าเป็นห่วง นั่นหมายความว่าคุณกำลังฝากอนาคตทั้งของตนเองและครอบครัวเอาไว้กับองค์กรหรือบริษัทที่คุณกำลังร่วมงาน  หากวันหนึ่งบริษัทที่คุณร่วมงานมีปัญหาเกิดขึ้น เหมือนในช่วงที่ประเทศไทยประสบปัญหาการแพร่ระบาดของ COVID-19 จนทำให้โรงแรม สถานประกอบการต่างๆ ในภาคธุรกิจท่องเที่ยวต้องปิดตัวกันอย่างมากมาย  ทำให้หลายคนต้องว่างงานโดยไม่ทันตั้งตัว แล้วคุณจะทำอย่างไร ไม่มีใครรู้ว่าในอนาคตประเทศไทยจะต้องเผชิญกับอะไรบ้าง ปัญหาโรคระบาด ปัญหาเศรษฐกิจ การเปลี่ยนแปลงของเทคโนโลยี สิ่งต่างๆ เหล่านี้้ทำให้ทุกคนต้องอยู่ใน "ความเสี่ยง" อยู่ตลอดเวลาโดยที่คุณไม่รู้ตัว แน่นอนว่า "กันเอาไว้ก่อน ย่อมดีกว่ามาแก้ไขในภายหลัง"
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 175.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1229</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 26 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA04974.jpg" class="h-56 zoom cursor-pointer" onclick="book26.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">TikTok for CEO เลิกเป็นคนตกยุคไม่รู้ตัว</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 202.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>610</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 26 -->
+            <dialog id="book26" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA04974.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">TikTok for CEO เลิกเป็นคนตกยุคไม่รู้ตัว</p><br>
+                            <p>
+                                ยุคนี้เป็นยุคแห่งการตลาดออนไลน์ นักขายทุกคนรู้ดีกว่าหากอยากให้สินค้าของตนเป็นที่รู้จัก จะมองข้ามพลังแห่งโซเชียลมีเดียไปไม่ได้เลย "TikTok" ก็เป็นแอปพลิเคชันหนึ่งที่กำลังมาแรง ที่สำคัญคือใช้งานง่าย แล้วยังช่วยสร้างยอดขายได้จริง
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 202.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>610</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 27 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05007.jpg" class="h-56 zoom cursor-pointer" onclick="book27.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ขายสินค้าราคาสูง ให้ลูกค้ากลับมาซื้อซ้ำ</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 225.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1212</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 27 -->
+            <dialog id="book27" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05007.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ขายสินค้าราคาสูง ให้ลูกค้ากลับมาซื้อซ้ำ</p><br>
+                            <p>
+                                ในอดีตนักขายจำนวนมากมีความเชื่อว่า เป็นนักขายต้องขายเก่ง ทว่ายุคนี้แค่ขายเก่งอย่างเดียวยังไม่พอ แต่คุณต้องรู้วิธีการทำให้ลูกค้ากลับมาซื้อซ้ำอย่างต่อเนื่อง เพื่อเพิ่มยอดขายให้สูงมากขึ้น โดยที่คุณไม่ต้องแสวงหาลูกค้าใหม่อยู่ตลอดเวลาเหมือนที่ผ่านมา หากคุณเป็นนักขายสิ่งสำคัญที่คุณจะต้องโจทย์ให้ได้คือ ทำอย่างไรให้ขายดี และ ทำอย่างไรให้ลูกค้าซื้อซ้ำ สองคำถามนี้ คือคำถามที่จะทำให้คุณบรรลุเป้าหมายของการขาย เพราะยุคนี้ลำพังแค่ขายดีอย่างเดียว มันไม่ตอบโจทย์ธุรกิจแล้ว
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 225.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1212</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 28 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA04814.jpg" class="h-56 zoom cursor-pointer" onclick="book28.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">"ลิขิตฟ้าหรือจะสู้มานะตน Jack Ma คนธรรมดาที่พลิกโลก!" เล่มนี้ เป็นคัมภีร์สำหรับคนรุ่นใหม่ ไฟแรง ที่อยากจะสร้างธุรกิจด้วยสมองและสองมือ โลกธุรกิจวันนี้ไม่มีใครไม่รู้จัก "แจ็ก หม่า" และอาลีบาบาแน่นอน ตำนานทางธุรกิจที่ยังมีชีวิต ที่เรื่องของเขากลายเป็นเคสสอนทางธุรกิจในมหาวิทยาลัยทั่วโลก ให้คนรุ่นใหม่ได้รู้จักคนจีนตัวเล็ก ๆ คนนี้ ด้วยมุมมองและวิธีคิดของเขาล้ำค่ามาก เหมาะกับคนรุ่นใหม่ที่มีไอเดียหลากหลายรูปแบบ และน่าจะลองอ่านชีวิตของ "แจ็ก หม่าดู" เพราะในบรรทัดเดียวหรือประโยคเดียวของเขา อาจจะช่วยพาให้ความฝันของคุณกลายเป็นความสำเร็จที่ยิ่งใหญ่ได้</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 220.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>615</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 28 -->
+            <dialog id="book28" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA04814.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">"ลิขิตฟ้าหรือจะสู้มานะตน Jack Ma คนธรรมดาที่พลิกโลก!" เล่มนี้ เป็นคัมภีร์สำหรับคนรุ่นใหม่ ไฟแรง ที่อยากจะสร้างธุรกิจด้วยสมองและสองมือ โลกธุรกิจวันนี้ไม่มีใครไม่รู้จัก "แจ็ก หม่า" และอาลีบาบาแน่นอน ตำนานทางธุรกิจที่ยังมีชีวิต ที่เรื่องของเขากลายเป็นเคสสอนทางธุรกิจในมหาวิทยาลัยทั่วโลก ให้คนรุ่นใหม่ได้รู้จักคนจีนตัวเล็ก ๆ คนนี้ ด้วยมุมมองและวิธีคิดของเขาล้ำค่ามาก เหมาะกับคนรุ่นใหม่ที่มีไอเดียหลากหลายรูปแบบ และน่าจะลองอ่านชีวิตของ "แจ็ก หม่าดู" เพราะในบรรทัดเดียวหรือประโยคเดียวของเขา อาจจะช่วยพาให้ความฝันของคุณกลายเป็นความสำเร็จที่ยิ่งใหญ่ได้</p><br>
+                            <p>
+                                หนังสือเล่มนี้สำหรับคนที่อยากเล่นหุ้นอย่างจริงจัง เลือกที่จะสำเร็จในการลงทุน ต้องการให้หุ้นเป็นการลงทุนที่เปลี่ยนชีวิต ถ่ายทอดจากประสบการณ์ตรงของผู้เขียนที่เคยเทรดแล้วแพ้ตลาด กับความพยายามที่จะหาข้อผิดพลาด แล้วพลิกกลับมาเป็น "กำไรท่าเดียว" กลายเป็นกลยุทธ์ที่ทำให้ชนะตลาดจากการเทรด โดยอธิบายระบบการทำกำไรตั้งแต่ก่อนลงทุน การเริ่มลงทุน การปรับปรุง และหลังการลงทุน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 220.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>615</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 29 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05121.jpg" class="h-56 zoom cursor-pointer" onclick="book29.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ชนะใจลูกน้องด้วย 25 กลยุทธ์สามก๊ก</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 245.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1174</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 29 -->
+            <dialog id="book29" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05121.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ชนะใจลูกน้องด้วย 25 กลยุทธ์สามก๊ก</p><br>
+                            <p>
+                                ชนะใจลูกน้อง ด้วย 25 กลยุทธ์สามก๊ก" คือ ผลงานชิ้นล่าสุดของอาจารย์เปี่ยมศักดิ์ คุณากรประทีป หนึ่งในกูรูสามก๊กระดับแนวหน้าของประเทศไทย ที่มีผลงานการเขียนเฉพาะเรื่องสามก๊กมาอย่างมากมาย เขาได้นำแนวคิดในสามก๊ก โดยเฉพาะเรื่องการชนะใจคนของผู้นำทั้ง 5 คน ได้แก่ โจโฉ เล่าปี่ ขงเบ้ง ซุนเซ็ก และซุนกวน มาอธิบายและประยุกต์ใช้ร่วมกับการบริหารคนในยุคสมัยใหม่ เพื่อสะท้อนให้คนรุ่นหลังเห็นว่าสามก๊กไม่เคยล้าหลังหรือตกยุคตกสมัย สามารถนำมาปรับใช้ได้ตลอดเวลา
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 245.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1174</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 30 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05820.jpg" class="h-56 zoom cursor-pointer" onclick="book30.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">สูตรสำเร็จ 9 วัน สู่ธุรกิจสร้างบ้านขาย</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 220.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>700</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 30 -->
+            <dialog id="book30" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05820.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สูตรสำเร็จ 9 วัน สู่ธุรกิจสร้างบ้านขาย</p><br>
+                            <p>
+                                ธุรกิจสร้างบ้านขาย ไม่ใช่ธุรกิจสำหรับคนมีเงินเท่านั้น แต่คนที่สนใจและตั้งใจจริงๆ สามารถเริ่มต้นจาก 0 ได้ ถ้าคุณมีความรู้ที่ถูกทาง และมากพอเพื่อเริ่มสร้างธุรกิจนี้ ขอเพียงมีความมุ่งมั่นตั้งใจอย่างจริงจัง และมีหลักการในการดำเนินธุรกิจอย่างถูกต้อง หนังสือเล่มนี้จะเป็นบทเรียนที่นำทางให้กับหลายๆ คนที่ต้องการเข้าสู่ธุรกิจสร้างบ้านขาย ลดความผิดพลาดที่จะเกิดขึ้น หรือปิดกั้นจุดบกพร่องที่อาจจะเกิดให้น้อยที่สุดเท่าที่จะทำได้ เริ่มจากบ้านตัวอย่าง หนึ่งหลัง เป็นสองหลัง สามหลัง สี่หลัง โดยค้นพบว่าเราสามารถหาแหล่งเงินทุน (เงินคนอื่น) เข้ามาอยู่ในระบบบริหารจัดการ และสามารถเข้าสู่ธุรกิจสร้างบ้านขายให้เกิดขึ้นได้จริง อยากเป็นเจ้าของโครงการ หนังสือเล่มนี้จะเผยเทคนิคและเคล็ดลับอย่างละเอียดให้กับคุณ
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 220.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>700</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 31 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA04795.jpg" class="h-56 zoom cursor-pointer" onclick="book31.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ฟรีแลนซ์เงินล้าน</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 265.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1112</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 31 -->
+            <dialog id="book31" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA04795.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ฟรีแลนซ์เงินล้าน</p><br>
+                            <p>
+                                ฟรีแลนซ์  คืออาชีพรับจ้างอิสระ ที่ต้องการความรับผิดชอบ และความเชี่ยวชาญเฉพาะด้าน ซึ่งสามารถทำรายได้ได้อย่างมั่นคงกว่าที่หลายๆ คนคิด!หากคุณต้องการความมั่งคั่ง พร้อมทั้งรูปแบบการทำงานที่คุณเป็นผู้ควบคุมความมั่งคงนั้นด้วยตัวเองอย่างการเป็นฟรีแลนซ์... หนังสือเล่มนี้มีทุกเรื่องราวที่คุณจำเป็นต้องรู้ ไม่ว่าจะเป็นการสร้างแบรนด์ วิธีการสร้างรายได้ เทคนิคการบริหารความสัมพันธ์  การขายงานและนำเสนอ ตลอดจนการดูแลลูกค้า และอีกหลากหลายเรื่องราวที่ไม่ควรพลาด! เพื่อให้คุณก้าวสู่เส้นทางฟรีแลนซ์แบบมืออาชีพ
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 265.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1112</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 32 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05626.jpg" class="h-56 zoom cursor-pointer" onclick="book32.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">คัมภีร์ลับนักขายผู้ยิ่งใหญ่</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 292.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>699</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 32 -->
+            <dialog id="book32" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05626.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">คัมภีร์ลับนักขายผู้ยิ่งใหญ่</p><br>
+                            <p>
+                                หลายครั้งที่ท่านมั่นใจว่าสินค้าของท่าน กระบวนการโน้มน้าวใจของท่าน ทำได้ดีอย่างไม่มีที่ติแล้ว แต่ถึงอย่างนั้น ท่านก็ยังไม่เข้าใกล้กับคำว่า ยอดนัดขาย เสียที เพราะการขาย ยังมีองค์ประกอบที่สำคัญอีกอย่างหนึ่งนั่นคือ ""ท่านต้องขายตนเองให้ได้ก่อน"" คัมภีร์ลับ นักขายผู้ยิ่งใหญ่ เล่มนี้รวบรวมกฎการสร้างนิสัยที่ดี 10 ประการเพื่อสร้างให้ท่านเป็นเวอร์ชั่นที่ดีสุด ผ่านเรื่องเล่าแรงบันดาลใจ อ่านง่าย กระชับ ตรงประเด็น
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 292.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>699</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 33 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05773.jpg" class="h-56 zoom cursor-pointer" onclick="book33.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">เขียนคอนเทนต์ให้ตรงใจ ดึงดูดคนได้ในไม่กี่วินาที</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 328.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>971</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 33 -->
+            <dialog id="book33" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05773.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">เขียนคอนเทนต์ให้ตรงใจ ดึงดูดคนได้ในไม่กี่วินาที</p><br>
+                            <p>
+                                หนังสือเล่มนี้จะช่วยให้ผู้อ่านเข้าใจศาสตร์และศิลป์ในการเขียน Digital Content ผ่าน Framework ที่ชื่อว่า "ROWEE (Research-Outline-Write-Edit-Enhance)" ซึ่งใช้เขียนคอนเทนต์ได้ทุกรูปแบบ ทุกแพลตฟอร์ม ไม่ว่าจะเป็นเว็บไซต์ โซเชียลมีเดีย อีบุ๊กส์ อินโฟกราฟิก หรือแม้แต่หัวข้อและคำอธิบายในวิดีโอคอนเทนต์ ตลอดจนคอนเทนต์ต่าง ๆ ที่มีงานเขียนเป็นส่วนประกอบสำคัญ ได้อย่างมืออาชีพ ถูกจริตอัลกอริทึ่มและโดนใจคนจำนวนมาก
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 328.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>971</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 34 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA04796.jpg" class="h-56 zoom cursor-pointer" onclick="book34.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">หนทางสู่องค์กรที่ขับเคลื่อนด้วยข้อมูล</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 351.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>489</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 34 -->
+            <dialog id="book34" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA04796.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">หนทางสู่องค์กรที่ขับเคลื่อนด้วยข้อมูล</p><br>
+                            <p>
+                                ทุกองค์กรต่างต้องปรับเปลี่ยน ไม่ว่าจะยุคสมัยใดก็ตาม ซึ่งในยุคดิจิทัล การปรับเปลี่ยนครั้งนี้จะไม่ประสบความสำเร็จ ถ้าทุกฝ่าย ทุกแผนกไม่ร่วมมือกัน เพราะ "ข้อมูล" ไม่ใช่แค่สิ่งที่เก็บเอาไว้เป็นหลักฐานยามจำเป็นอีกต่อไปแต่มันได้กลายเป็น "สินทรัพย์" ที่สามารถนำมาใช้เพื่อการตัดสินใจหรือเพื่อหารายได้ โดยวงจรชีวิตของข้อมูลตั้งแต่เกิดขึ้น จัดเก็บ นำไปใช้ เผยแพร่ จัดเก็บถาวร และทำลาย มีบุคลากรในองค์กรเกี่ยวข้องกันมากกว่า 3 ฝ่าย ทั้งผู้สร้างข้อมูล เจ้าของข้อมูล ผู้ดูแลข้อมูล และผู้ใช้ข้อมูล  ดังนั้นการจะไปสู่ "องค์กรที่ขับเคลื่อนด้วยข้อมูล" จึงไม่ใช่เรื่องง่าย และจําเป็นต้องวาง
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 351.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>489</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 35 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05169.jpg" class="h-56 zoom cursor-pointer" onclick="book35.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">บริหารงานด้วยกลยุทธ์สามก๊ก</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 432.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>777</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 35 -->
+            <dialog id="book35" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05169.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">บริหารงานด้วยกลยุทธ์สามก๊ก</p><br>
+                            <p>
+                                ถอดบทเรียน 46 บทเรียนในสามก๊ก ที่นักบริหารในสมรภูมิธุรกิจไม่อาจมองข้าม เพราะเต็มไปด้วยกลยุทธ์นานัปการ ที่นักธุรกิจหรือนักบริหารในปัจจุบันที่สามารถนำมาปรับใช้ได้ แม้ว่าโลกปัจจุบัน แม้โลกปัจจุบันจะหมุนไปอย่างรวดเร็ว องค์ความรู้ และยุทธ์วิธีต่างๆ ในการบริหารก็จะมีองค์ความรู้ใหม่ๆ แนวทางหรือทิศทางหลากหลายมากขึ้นก็จริง แต่ทว่าหลักคิดในวรรณกรรมสามก๊ก ไม่เคยล้าสมัย เมื่อใช้ปัญญาพิเคราะห์ยิ่งจะเห็นถึงกลยุทธ์ที่แจ่มชัดมากยิ่งขึ้น
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 432.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>777</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 36 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05853.jpg" class="h-56 zoom cursor-pointer" onclick="book36.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">CHIP WAR สงครามชิป (สำนักพิมพ์ แอร์โรว์ มัลติมีเดีย)</p>
+                <p class="text-sm px-2 pb-2">การบริหารธุรกิจ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 351.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>357</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 36 -->
+            <dialog id="book36" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05853.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">CHIP WAR สงครามชิป (สำนักพิมพ์ แอร์โรว์ มัลติมีเดีย)</p><br>
+                            <p>
+                                ณอาจประหลาดใจที่รู้ว่าไมโครชิปคือน้ำมันชนิดใหม่ ซึ่งเป็นทรัพยากรที่หายากซึ่งโลกยุคใหม่ต้องพึ่งพาอาศัย ปัจจุบัน อำนาจทางการทหาร เศรษฐกิจ และภูมิรัฐศาสตร์ถูกสร้างขึ้นบนรากฐานของชิปคอมพิวเตอร์ เกือบทุกอย่าง— ตั้งแต่ขีปนาวุธไปจนถึงไมโครเวฟ — ทำงานบนชิป รวมถึงรถยนต์ สมาร์ทโฟน ตลาดหุ้น แม้กระทั่งโครงข่ายไฟฟ้า จนกระทั่งเมื่อไม่นานมานี้ อเมริกาได้ออกแบบและสร้างชิปที่เร็วที่สุดและรักษาตำแหน่งผู้นำในฐานะมหาอำนาจอันดับหนึ่ง 
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 351.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>357</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

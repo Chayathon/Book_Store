@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book Store</title>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar bg-base-300 shadow-md shadow-inner">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li>
+                        <a>หมวดหมู่</a>
+                        <ul class="p-2">
+                            <li><a href="book_type1.html">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </li>
+                    <li><a>หนังสือขายดี</a></li>
+                    <li><a href="ordered.html">คำสั่งซื้อ</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"><i class="fas fa-book fa-lg"></i>Book Store</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="text-lg">หน้าแรก</a></li>
+                <li tabindex="0">
+                    <details>
+                        <summary class="text-lg">หมวดหมู่</summary>
+                        <ul class="p-2 w-60 shadow-md z-10">
+                            <li><a href="book_type1.html" class="text-md">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html" class="text-md">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html" class="text-md">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html" class="text-md">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html" class="text-md">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-lg">หนังสือขายดี</a></li>
+                <li><a class="text-lg" href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="search__wrapper">
+                <input type="text" class="search__field">
+                <button type="submit" class="fa fa-search search__icon"></button>
+            </div>
+            <ul class="px-3">
+                <li><i class="fas fa-shopping-cart fa-lg cursor-pointer zoom" onclick="window.location='cart.html'"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            <!-- Book 1 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D093394.jpg" class="h-56 zoom cursor-pointer" onclick="book1.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">เรียนรู้ AI : Deep Learning ด้วย Python</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 385.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>2123</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 1 -->
+            <dialog id="book1" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D093394.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">เรียนรู้ AI : Deep Learning ด้วย Python</p><br>
+                            <p>
+                                หนังสือเล่มนี้ เรียบเรียงขึ้นสำหรับผู้เริ่มต้นเรียน Deep Learning แบบ Step-by-Step เน้นการเรียนรู้ด้วยการฝึกปฏิบัติ Workshop จากโค้ดตัวอย่าง การใช้เครื่องมือไลบรารีที่สำคัญ TensorFlowKeras เนื้อหาครอบคลุมตั้งแต่การติดตั้งระบบ พื้นฐานที่สำคัญ จนถึงการประยุกต์ใช้งาน ซึ่งการเรียนรู้ที่ดีจะไม่เพียงแค่ใช้ไลบรารีเป็นเท่านั้น ผู้ศึกษาจะต้องเรียนรู้หลักการหัวใจสำคัญด้วย 
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 385.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>2123</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 2 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092151.jpg" class="h-56 zoom cursor-pointer" onclick="book2.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">การเขียนโปรแกรมด้วย JAVA ฉบับสมบูรณ์</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 279.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>924</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 2 -->
+            <dialog id="book2" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092151.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">การเขียนโปรแกรมด้วย JAVA ฉบับสมบูรณ์</p><br>
+                            <p>
+                                ทำความเข้าใจกับภาษาจาวาที่เป็นภาษาสำหรับการเขียนโปรแกรมเชิงวัตถุ (Object Oriented Programming) ตั้งแต่เรื่องพื้นฐาน ไปจนถึงระดับสูง ผ่านหนังสือเล่มนี้
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 279.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>924</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 3 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092332.jpg" class="h-56 zoom cursor-pointer" onclick="book3.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">คัมภีร์การใช้งาน C# : ควบคุมการทำงาน Microcontroller, PLC และ IoT (ปกอ่อน)</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 280.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>2023</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 3 -->
+            <dialog id="book3" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092332.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">คัมภีร์การใช้งาน C# : ควบคุมการทำงาน Microcontroller, PLC และ IoT (ปกอ่อน)</p><br>
+                            <p>
+                                เนื้อหาในคัมภีร์การใช้งาน C# : ควบคุมการทำงาน Microcontroller, PLC และ IoTเนื้อหาในคัมภีร์การใช้งาน C# : ควบคุมการทำงาน Microcontroller, PLC และ IoT
+                                นำเสนอเนื้อหาเกี่ยวกับการนำภาษา C# ไปควบคุมหรือติดต่อกับภาษาอื่นๆ เช่น ภาษา Delphi, ภาษา C++, C++.NET, VB.NET หรือ ภาษา Java เป็นต้น
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 280.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>2023</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 4 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092363.png" class="h-56 zoom cursor-pointer" onclick="book4.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ออกแบบ และสร้าง Website ฉบับสมบูรณ์</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 259.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>987</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 4 -->
+            <dialog id="book4" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092363.png"></div>
+                        <div>
+                            <p class="text-2xl font-black">ออกแบบ และสร้าง Website ฉบับสมบูรณ์</p><br>
+                            <p>
+                                นังสือ เล่มนี้ จึงได้จัดทำขึ้นสำหรับผู้ที่อยากเรียนรู้ และเริ่มต้นในการสร้างเว็บไซต์ด้วยตนเอง ตั้งแต่ขั้นพื้นฐานการออกแบบ ไปจนถึงการลงมือสร้างเว็บไซต์เพื่อการใช้งาน โดยได้แบ่งเนื้อหาออกเป็นส่วนต่างๆ อาทิ พื้นฐานการสร้างเว็บไซต์, การสร้างงานกราฟิกด้วย Photoshop CS6, การจัดหน้าเว็บเพจด้วย Dreamweaver CS6, การสร้างภาพเคลื่อนไหวด้วย Flash CS6, การบริหารจัดการเว็บไซต์ด้วย Joomla 2.5 และโปรโมตเว็บไซต์ให้เป็นที่รู้จัก
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 259.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>987</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 5 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092385.jpg" class="h-56 zoom cursor-pointer" onclick="book5.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ช่างคอม ประกอบ ติดตั้ง และแก้ปัญหาเครื่อง Windows 10 และ Windows 8.1 / 7</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 199.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1854</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 5 -->
+            <dialog id="book5" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092385.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ช่างคอม ประกอบ ติดตั้ง และแก้ปัญหาเครื่อง Windows 10 และ Windows 8.1 / 7</p><br>
+                            <p>
+                                ช่างคอมประกอบ ติดตั้ง และแก้ปัญหาเครื่อง Windows 10 และ Windows 8.1/7รวบรวมเนื้อหาตั้งแต่การเจาะลึกชิปซีพียู และชิปกราฟิกยอดนิยม และแนะนำอุปกรณ์พร้อมเทคโนโลยีล่าสุด 2016 การเลือกซื้อคอมพิวเตอร์ให้คุ้มค่า
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 199.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1854</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 6 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092390.jpg" class="h-56 zoom cursor-pointer" onclick="book6.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">เขียนแบบทางวิศวกรรม และสถาปัตยกรรมด้วย AutoCAD 2020</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 345.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>611</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 6 -->
+            <dialog id="book6" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092390.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">เขียนแบบทางวิศวกรรม และสถาปัตยกรรมด้วย AutoCAD 2020</p><br>
+                            <p>
+                                คู่มือเจาะลึกความสามารถ AutoCAD 2020 สำหรับผู้เริ่มต้นจนถึงระดับมือโปร เนื้อหาภายในเล่มอธิบายการเขียนแบบ 2 มิติ และ 3 มิติ รู้จักการใช้เครื่องมือเขียนแบบในรูปแบบต่าง ๆ แก้ไขและตกแต่งแบบ การสร้างและแก้ไข Block ในรูปแบบต่าง ๆ การกำหนดมาตราส่วน การพิมพ์แบบ การเขียนภาพตัด เข้าใจการเขียนแบบไอโซเมตริก การทำภาพเคลื่อนไหวเพื่อสร้างทักษะ และปูพื้นฐานงานเขียน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 345.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>611</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 7 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092444.jpg" class="h-56 zoom cursor-pointer" onclick="book7.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">การเขียนโปรแกรมด้วย Python GUI+Network+Database+Web </p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 199.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1625</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 7 -->
+            <dialog id="book7" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092444.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">การเขียนโปรแกรมด้วย Python GUI+Network+Database+Web </p><br>
+                            <p>
+                                คู่มือเล่มนี้ จัดทำขึ้นสำหรับผู้ที่เริ่มต้นศึกษาการเขียนโปรแกรมคอมพิวเตอร์ ให้สามารถเข้าใจโครงสร้างภาษา Python ไวยากรณ์ การเขียนโปรแกรมเชิงโครงสร้าง ไปจนถึงการสร้างฟังก์ชันที่เป็นโปรแกรมย่อยและสามารถเขียนโปรแกรมเชิงวัตถุ
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 199.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1625</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 8 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092562.jpg" class="h-56 zoom cursor-pointer" onclick="book8.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">คู่มือใช้งาน Window 11 Essential Guide ง่าย ครบ จบ ในเล่มเดียว</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 365.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>202</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 8 -->
+            <dialog id="book8" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092562.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">คู่มือใช้งาน Window 11 Essential Guide ง่าย ครบ จบ ในเล่มเดียว</p><br>
+                            <p>
+                                หนังสือคู่มือ Windows 11 เล่มนี้จะเขียนอธิบายการทำงานกับ Windows 11 ตั้งแต่การใช้งานเบื้องต้นไปจนถึงการทำงานขั้นสูง คือการปรับแต่งหรือตั้งค่าการทำงานของระบบ
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 365.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>202</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 9 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092628.jpg" class="h-56 zoom cursor-pointer" onclick="book9.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">เขียน Ea Forex ด้วยภาษา MQL4</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 295.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1543</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 9 -->
+            <dialog id="book9" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092628.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">เขียน Ea Forex ด้วยภาษา MQL4</p><br>
+                            <p>
+                                หนังสือเล่มนี้จะทำให้คุณได้เรียนรู้เกี่ยวกับการสร้าง Robot สำหรับเทรด Forex ในรูปแบบต่าง ๆ ได้เอง เหมาะสำหรับผู้ที่ไม่มีเวลาเฝ้าหน้าจอ และต้องการให้ระบบทำงานแทน 24 ชม.
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 295.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1543</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 10 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D093242.jpg" class="h-56 zoom cursor-pointer" onclick="book10.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">พัฒนา Web Application ด้วย PHP และ MariaDB</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 380.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>753</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 10 -->
+            <dialog id="book10" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D093242.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">พัฒนา Web Application ด้วย PHP และ MariaDB</p><br>
+                            <p>
+                                หนังสือเล่มนี้มีเนื้อหาที่จำเป็นต่อการพัฒนาเว็บไซต์อย่างครบถ้วน สามารถศึกษาเรียนรู้ได้ด้วยตนเอง เริ่มจากการเขียนสคริปต์ PHP ตั้งแต่ขั้นพื้นฐานเป็นต้นไป และการจัดการฐานข้อมูล MariaDB ในแบบ OOP พร้อมแนวทางการประยุกต์ใช้งานจากเวิร์คช็อปที่หลากหลาย นอกจากนี้ยังกำหนดการแสดงผลแบบ Responsive โดยใช้ Bootstrap Framework เพื่อรองรับหน้าจอที่มีขนาดแตกต่างกันอีกด้วย
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 380.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>753</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 11 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D094220.jpg" class="h-56 zoom cursor-pointer" onclick="book11.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">จัดการฐานข้อมูลด้วย MySQL + MariaDB</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 229.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1229</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 11 -->
+            <dialog id="book11" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D094220.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">จัดการฐานข้อมูลด้วย MySQL + MariaDB</p><br>
+                            <p>
+                                จัดการฐานข้อมูลด้วย MariaDB + MySQL ฉบับสมบูรณ์" เล่มนี้ ผู้เขียนจะแนะนำให้รู้จักโปรแกรมฐานข้อมูล "MariaDB/MySQL" โดยเน้นในการใช้งานในลักษณะ "Command Line" คือการเรียนรู้คำสั่ง SQL เพื่อจัดการฐานข้อมูลเป็นหลัก เนื่องจากผู้เขียนคิดว่าเป็นสิ่งที่สำคัญสำหรับโปรแกรมเมอร์ทุกคน ถ้าเราจะเขียนโปรแกรมไม่ว่าภาษาอะไรเพื่อที่จะจัดการฐานข้อมูล แต่ไม่รู้คำสั่ง SQL การเขียน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 229.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1229</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 12 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D094650.jpg" class="h-56 zoom cursor-pointer" onclick="book12.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ล้างเครื่องลง Windows ใหม่และโปรแกรมใช้งานที่ควรมี</p>
+                <p class="text-sm px-2 pb-2">เทคโนโลยีคอมพิวเตอร์</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 179.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>112</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 12 -->
+            <dialog id="book12" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D094650.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ล้างเครื่องลง Windows ใหม่และโปรแกรมใช้งานที่ควรมี</p><br>
+                            <p>
+                                ผู้อ่านจำนวนมากที่มักเกิดปัญหาการใช้งานครื่องคอมพิวเตอร์ เครื่องรวนแก้ไม่ได้ หรือใช้งานเครื่องมานาน อยากลง Windows ใหม่เองแต่ไม่รู้ขั้นตอน หรือกลัวข้อมูลบนเครื่องจะสูญหาย "ล้างเครื่องลง Windows ใหม่และโปรแกรมใช้งานที่ควรมี" เล่มนี้ จึงได้รวบรวมเนื้อหาและวิธีการแบ็คอัพข้อมูลสำคัญก่อนลงมือล้างเครื่อง การลง Windows ใหม่ และการเชตเครื่องใหม่จนพร้อมใช้งานไว้อย่างเป็นขั้นตอน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 179.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>112</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

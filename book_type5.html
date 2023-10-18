@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book Store</title>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar bg-base-300 shadow-md shadow-inner">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li>
+                        <a>หมวดหมู่</a>
+                        <ul class="p-2">
+                            <li><a href="book_type1.html">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </li>
+                    <li><a>หนังสือขายดี</a></li>
+                    <li><a href="ordered.html">คำสั่งซื้อ</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"><i class="fas fa-book fa-lg"></i>Book Store</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="text-lg">หน้าแรก</a></li>
+                <li tabindex="0">
+                    <details>
+                        <summary class="text-lg">หมวดหมู่</summary>
+                        <ul class="p-2 w-60 shadow-md z-10">
+                            <li><a href="book_type1.html" class="text-md">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html" class="text-md">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html" class="text-md">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html" class="text-md">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html" class="text-md">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-lg">หนังสือขายดี</a></li>
+                <li><a class="text-lg" href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="search__wrapper">
+                <input type="text" class="search__field">
+                <button type="submit" class="fa fa-search search__icon"></button>
+            </div>
+            <ul class="px-3">
+                <li><i class="fas fa-shopping-cart fa-lg cursor-pointer zoom" onclick="window.location='cart.html'"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            <!-- Book 49 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092816.jpg" class="h-56 zoom cursor-pointer" onclick="book49.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">รอวันที่เราได้รักกัน (เล่มเดียวจบ)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 49.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1696</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 49 -->
+            <dialog id="book49" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092816.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">รอวันที่เราได้รักกัน (เล่มเดียวจบ)</p><br>
+                            <p>
+                                ตอนป.1 โมโมะได้ยูคิจังนักเรียนม.ปลายที่อาศัยอยู่ห้องข้างๆ ช่วยชีวิตไว้ตอนตกจากระเบียง 10 ปีให้หลัง โมโมะที่เป็นนักเรียนม.ปลายได้พบกับยูคิจังอีกครั้ง! ทั้งสองกลายมาเป็นเพื่อนบ้านกันใหม่ แต่ทว่า...? เพราะเป็นคนสำคัญ ถึงไม่อยากให้ทำหน้าเหงา เชิญพบกับเรื่องราวในช่วงเวลา 1 ปีที่เกี่ยวข้องกับครอบครัวและเพื่อนสมัยเด็กอายุห่างกัน...ที่ทั้งอบอุ่น สุขใจ และรวดร้าวบ้างเล็กน้อย พร้อมตอนพิเศษวาดใหม่ 17 หน้าในเล่ม?
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 49.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1696</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 50 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D095495.jpg" class="h-56 zoom cursor-pointer" onclick="book50.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">รักตึกตักของนักเรียนหน้าใหม่</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 49.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>426</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 50 -->
+            <dialog id="book50" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D095495.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">รักตึกตักของนักเรียนหน้าใหม่</p><br>
+                            <p>
+                                "โฮนามิ" อดีตสาวจืดชืด อยากใช้โอกาสในการย้ายโรงเรียนใหม่ก้าวเข้าสู่การเป็นวัยรุ่นเปล่งประกาย วันแรกของการย้ายโรงเรียน โฮนามิผู้ประหม่าได้รับความช่วยเหลือจาก "ฟุจิวาระคุง" หนุ่มหล่อผู้เอื่อยเฉื่อย หลังจากนั้น ฟุจิวาระคุงยังคงใส่ใจโฮนามิอยู่เสมอ โฮนามิมือใหม่เรื่องความรักต้องถูกปั่นหัวจากคำพูดและการกระทำใสซื่ออยู่ร่ำไป...!? เรื่องรัก ๆ ใจเต้นตึกตักของนักเรียนสาวคนใหม่!
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 49.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>426</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 51 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA03620.jpg" class="h-56 zoom cursor-pointer" onclick="book51.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">สาว426น้อยวุ่นวายในวันสิ้นโลก เล่ม 1</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 49.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1483</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 51 -->
+            <dialog id="book51" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA03620.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สาวน้อยวุ่นวายในวันสิ้นโลก เล่ม 1</p><br>
+                            <p>
+                                วันประกาศผลสอบเข้าม.ปลายชาฮาระ ริโกะสอบเข้าได้อย่างฉลุยทว่าระหว่างทางกลับบ้านกลับดูกรถบรรทุกชนระหว่างที่ภาพอดีตฉายวนในกาวะใกล้ตายริโทะก็ฉุกคิดขึ้นได้ว่าตัวเองยังไม่รู้จักความรักเลยริโกะที่รอดชีวิตมาได้หวุดหวิดจึงได้เข้าเรียนม.ปลายอย่างเป็นทางการเธอไปหลงใหลอุซามิคุงที่ได้เจอกันในนั้นแต่เขามีความลับซ่อนอยู่..
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 49.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1483</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 52 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA03619.jpg" class="h-56 zoom cursor-pointer" onclick="book52.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">สาวน้อยวุ่นวายในวันสิ้นโลก 2 (เล่มจบ)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 49.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>631</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 52 -->
+            <dialog id="book52" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA03619.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สาวน้อยวุ่นวายในวันสิ้นโลก 2 (เล่มจบ)</p><br>
+                            <p>
+                                 "ซาฮาระ ริโกะ" ประสบอุบัติเหตุรถชนก่อนหน้าจะขึ้น ม.ปลาย ไม่นาน "ยังไม่เคยมีความรักเลย ฉันยังไม่อยากตาย!" ด้วยคำพูดนั้นเธอจึงผ่านมาได้และได้เข้าเรียน ทว่าด้วยนิสัยที่ผิดแผกทำให้ริโกะเป็นตัวแปลกปลอมในชั้นเรียน เธอหลงรัก "อุซามิคุง" เด็กหนุ่มมาดขรึมที่เข้ามาช่วยในช่วงเวลาเหล่านั้น วันหนึ่ง ริโกะได้บังเอิญพบกับวิญญาณของเด็กสาวในสวนสาธารณะ และแท้จริงแล้วเธอคนนั้นคือ "ซาราฮะ" อดีตแฟนสาวของอุซามิคุง...!?
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 49.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>631</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 53 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D097308.jpg" class="h-56 zoom cursor-pointer" onclick="book53.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">อยากมารักกับฉันไหม? (เล่มเดียวจบ)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 49.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1234</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 53 -->
+            <dialog id="book53" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D097308.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">อยากมารักกับฉันไหม? (เล่มเดียวจบ)</p><br>
+                            <p>
+                                ‘ผู้ชายแบบนี้ทั้งๆ ที่รู้ว่าไม่ดี ทำไมกัน ทำไมถึงถูกดึงดูดกันนะ...ในที่สุดมิอุก็ได้เข้าเรียนในโรงเรียนมัธยมปลายเอกชนหญิงล้วนของพวกลูกคุณหนูอันเข้ายากตามที่หวังเอาไว้ได้ และเปิดตัวชีวิตม.ปลายได้อย่างสวยงาม ที่นั่นมิอุได้เจอกับอาจารย์ฮาเซกาวะ ครูสอนพิเศษสมัยมัธยมต้นอีกครั้ง ความจริงแล้วเขาเป็นคนที่ขโมยจูบแรกของมิอุ?? ผลงานหลัก “อยากมารักกับฉันไหม?” และเรื่องอื่นๆ ในเล่ม เรื่องราวความรักทั้ง 6 แบบที่ร้อนแรงและหวานละมุน?
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 49.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1234</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 54 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D096859.jpg" class="h-56 zoom cursor-pointer" onclick="book54.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ฝันไปเถอะว่าเราจะรักกัน I should not love you เล่มเดียวจบ</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 58.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>621</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 54 -->
+            <dialog id="book54" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D096859.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ฝันไปเถอะว่าเราจะรักกัน I should not love you เล่มเดียวจบ</p><br>
+                            <p>
+                                ฟูจิมะ ไทเซ หนุ่มน้อยรูปงามประจำเมือง ถูกเลี้ยงดูอย่างตามใจจากคนรอบข้างมาตั้งแต่เด็ก จุดด่างพร้อยเพียงอย่างเดียวในชีวิตของเขาคือเพื่อนร่วมชั้นสมัยมัธยมต้นที่ชื่อโอคาชิมะจิ เคตะ เมื่อพวกเขาได้พบกันอีกครั้งหลังผ่านไป 3 ปี แผนการแก้แค้นของไทเซจึงเริ่มขึ้น ทว่าน่าแปลก ทั้งที่เขาเกลียดโอคาชิมะจิเข้าไส้ แต่หัวใจกลับเต้นไม่เป็นส่ำจนเขาแทบคิดอะไรไม่ออก ฉันเนี่ยนะชอบหมอนั่น
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 58.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>621</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 55 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092079.jpg" class="h-56 zoom cursor-pointer" onclick="book55.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">แยงกี้ตัวร้ายกับนายฮอตเนิร์ด Outsider communication Mg (ปกอ่อน)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 81.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>852</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 55 -->
+            <dialog id="book55" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092079.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">แยงกี้ตัวร้ายกับนายฮอตเนิร์ด Outsider communication Mg (ปกอ่อน)</p><br>
+                            <p>
+                                เซคิ นักเรียนม.ปลายที่สุมหัวอยู่กลุ่มเดียวกับพวกเด็กเกเรในรุ่นเดียวกัน ถูกอิวาชิโระ นักเรียนดีเด่นจับได้ว่าทำงานพิเศษซึ่งเป็นเรื่องผิดกฎโรงเรียน ขณะกำลังถกเถียงกับอิวาชิโระที่ก่อนหน้านี้ไม่เคยข้องแวะกันแม้แต่นิดเดียว เซคิเผลอสะบัดมือไปโดนอีกฝ่ายจนเป็นเหตุให้เจ้าตัวตกบันได แม้จะไม่พอใจอิวาชิโระที่ขาพลิก แต่เซคิก็ยอมช่วยเหลือเขา ระหว่างนั้นทั้งสองคนที่แตกต่างกันสุดขั้วก็ได้ใช้เวลาอยู่ด้วยกันมากขึ้น
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 81.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>852</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 56 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092084.jpg" class="h-56 zoom cursor-pointer" onclick="book56.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">Come to hand คัมทูแฮนด์ (เล่มเดียวจบ) Mg (ปกอ่อน)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 81.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>381</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 56 -->
+            <dialog id="book56" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092084.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">Come to hand คัมทูแฮนด์ (เล่มเดียวจบ) Mg (ปกอ่อน)</p><br>
+                            <p>
+                                มิฮาระ อาจารย์ม.ปลายเหนื่อยหนักจนล้มฟุบไปข้างทางขณะหิมะโปรยปราย คนที่ช่วยเขาไว้ก็คืออาราชิ ผู้จัดการสตูดิโอสัก เมื่อเห็นรอยสักเป็นครั้งแรกมิฮารุก็ตกใจ จนเผลอทำตัวเสียมารยาทกับอาราชิหลังจากนั้น มิฮารุไปที่ร้านเพื่อขอบคุณอีกครั้ง อาราชิที่เห็นมิฮารุยุ่งหนักเพราะเรื่องงานก็แสดงความห่วงใยอย่างอ่อนโยน อาจเพราะความที่อายุเท่ากัน มิฮารุจึงค่อยๆ สนิทกับอาราชิและหลงเสน่ห์เขามากขึ้นเรื่อยๆแต่ในขณะเดียวกันก็มีเรื่องคาใจเล็กๆ ผุดขึ้นมา...
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 81.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>381</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 57 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D095490.jpg" class="h-56 zoom cursor-pointer" onclick="book57.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">อาจารย์เวทมนตร์ไม่เอาไหนกับตำนานปราสาทลอยฟ้า เล่ม 4</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 121.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>753</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 57 -->
+            <dialog id="book57" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D095490.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">อาจารย์เวทมนตร์ไม่เอาไหนกับตำนานปราสาทลอยฟ้า เล่ม 4</p><br>
+                            <p>
+                                เกลนกับลูเมีย ถูกกองราชองครักษ์ของจักรพรรดินีไล่ล่าจนต้องหนีเตลิดไปทั่วเมือง ขณะที่ทางฝั่งเทศกาลประลองเวทก็ได้อัลเบิร์ตกับรีแอลมาคุมห้องแทนแกลน เทศกาลประลองเวทกำลังดำเนินไปถึงจุดไคลแมกซ์ พร้อมกับความจริงทั้งหมดที่กำลังจะถูกเปิดเผย "แม่ของเธอน่ะ...รักเธอนะ" เกลนท้าทายพร้อมยอมตาย ต่อสถานการณ์วิกฤติที่มีอยู่รอบด้าน วีรกรรมแฟนตาซีแนวใหม่ที่สุดแสนจะพลิกผันกำลังรอคุณอยู่ในเล่ม 4 นี้แล้ว
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 121.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>753</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 58 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092038.jpg" class="h-56 zoom cursor-pointer" onclick="book58.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">ฮิปโนซิสไมค์ Before the Battle The Dirty Dawg 3 (Mg)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 130.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>499</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 58 -->
+            <dialog id="book58" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092038.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">ฮิปโนซิสไมค์ Before the Battle The Dirty Dawg 3 (Mg)</p><br>
+                            <p>
+                                ในศักราช H โลกที่สตรีกุมอำนาจการปกครอง เหล่าผู้ชายเปิดศึกแย่งชิงเขตแดนขึ้นทั่วทุกหนแห่งด้วย ฮิปโนซิสไมค์ ไมค์พิเศษที่สามารถแทรกแซงโจมตีจิตใจของมนุษย์ สายสัมพันธ์ใหม่ถือกำเนิดขึ้นระหว่าง ยามาดะ อิจิโร และ อาโอฮิตสึกิ ซามะโทคิ หลังผ่านศึกแร็ปแบตเทิล ทำให้พวกเขารวมถึง นุรุเดะ ซาซาระ และ ฮาราอิ คูโค หันมารวมกลุ่มเคลื่อนไหวเป็นทีม 4 คน อีกด้านหนึ่ง อาเมมุระ รามุดะ ที่จับคู่กับ จินกูจิ จากุไร เริ่มดำเนินการอย่างลับๆ เพื่อเป้าหมายบางอย่าง การ์ตูนจากโปรเจ็กต์เพลงแร็ปออริจินัลสุดฮิต ฮิปโนซิสไมค์ Division Rap Battle เวลาแห่งการรวมตัวของทีมในตำนาน The Dirty Dawg ใกล้เข้ามาแล้ว 
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 130.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>499</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 59 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D092480.jpg" class="h-56 zoom cursor-pointer" onclick="book59.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">มหาศึกคนชนเทพ กรุตำนาน ลิโป้ขุนพลผงาดฟ้า เล่ม 3 (Mg) (ปกอ่อน)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 130.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>654</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 59 -->
+            <dialog id="book59" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D092480.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">มหาศึกคนชนเทพ กรุตำนาน ลิโป้ขุนพลผงาดฟ้า เล่ม 3 (Mg) (ปกอ่อน)</p><br>
+                            <p>
+                                หลังจากที่ ลิโป้ตัวแทนฝ่ายมนุษย์คนแรก ในศึกดวล 13 รอบระหว่างเทพ VS มนุษย์ สร้างตำนานที่ด่านเฮาโลก๋วน 1 ปี ต่อมาเขาก็ปรากฏตัวขึ้นเบื้องหน้าตั๋งโต๊ะ ชายผู้ปรารถนาจะครองความเป็นใหญ่ในโลกหล้า และนั่นคือปฐมบทแห่งมหาตำนาน ของเหล่าบุรุษที่ฟ้าได้ประทาน เชิงยุทธ์ มาให้
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 130.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>654</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 60 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D095094.jpg" class="h-56 zoom cursor-pointer" onclick="book60.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">มหาศึกคนชนเทพ เล่ม 8 (Mg)</p>
+                <p class="text-sm px-2 pb-2">การ์ตูน / มังงะ</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 130.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>600</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 60 -->
+            <dialog id="book60" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D095094.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">มหาศึกคนชนเทพ เล่ม 8 (Mg)</p><br>
+                            <p>
+                                เปิดฉากศึกรอบที่ 5!! ตัวละคร ที่เป็นตัวแทนฝั่งมนุษย์ คือ ยอดบุรุษแห่งวงการซูโม่ จอมพลังผู้เป็นหนึ่ง ไรเด็น ทาเมเอมอน! ในขณะที่ตัวแทนเทพ คือเทพผู้ทำลายสุดแกร่งซึ่งอยู่เหนือ ทวยเทพอินเดียทั้งปวง ศิวะ! ไรเด็นชิงลงมือก่อนทันทีด้วยการโจมตี ที่ทำเอาทั้งลานประลองตกตะลึง!? เพียงแค่วินาทีแรกที่เผชิญหน้า การดวลพลังของจริงก็อุบัติขึ้นอย่างดุเดือด!!
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 130.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>600</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92b7c9602c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book Store</title>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar bg-base-300 shadow-md shadow-inner">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li>
+                        <a>หมวดหมู่</a>
+                        <ul class="p-2">
+                            <li><a href="book_type1.html">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </li>
+                    <li><a>หนังสือขายดี</a></li>
+                    <li><a href="ordered.html">คำสั่งซื้อ</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"><i class="fas fa-book fa-lg"></i>Book Store</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="text-lg">หน้าแรก</a></li>
+                <li tabindex="0">
+                    <details>
+                        <summary class="text-lg">หมวดหมู่</summary>
+                        <ul class="p-2 w-60 shadow-md z-10">
+                            <li><a href="book_type1.html" class="text-md">เทคโนโลยีคอมพิวเตอร์</a></li>
+                            <li><a href="book_type2.html" class="text-md">การเงินและการลงทุน</a></li>
+                            <li><a href="book_type3.html" class="text-md">การบริหารธุรกิจ</a></li>
+                            <li><a href="book_type4.html" class="text-md">นิยาย / วรรณกรรม</a></li>
+                            <li><a href="book_type5.html" class="text-md">การ์ตูน / มังงะ</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-lg">หนังสือขายดี</a></li>
+                <li><a class="text-lg" href="ordered.html">คำสั่งซื้อ</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="search__wrapper">
+                <input type="text" class="search__field">
+                <button type="submit" class="fa fa-search search__icon"></button>
+            </div>
+            <ul class="px-3">
+                <li><i class="fas fa-shopping-cart fa-lg cursor-pointer zoom" onclick="window.location='cart.html'"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            <!-- Book 13 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05183.jpg" class="h-56 zoom cursor-pointer" onclick="book13.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">เพื่อนคนแรก TFEX 101</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 166.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>159</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 13 -->
+            <dialog id="book13" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05183.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">เพื่อนคนแรก TFEX 101</p><br>
+                            <p>
+                                หนังสือเล่มนี้ถือเป็นเพื่อนคนแรกที่อยากแนะนำตลาด TFEX และดาวเด่น เช่น SET50 Index Future ให้ทุกคนได้ทำความรู้จัก ตั้งแต่ประวัติความเป็นมา พร้อมคำอธิบายว่า สัญญาซื้อขายล่วงหน้าคืออะไร และเราจะใช้ประโยชน์จากมันอย่างไร ถึงแม้หนังสือเล่มนี้อาจไม่เทียบได้กับตำราวิชาการเกี่ยวกับตราสารอนุพันธ์ แต่จะช่วยให้ทุกคนทำความคุ้นเคยและเริ่มใช้สินค้าต่างๆ ในตลาด TFEX ได้ 
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 166.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>159</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 14 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D094260.jpg" class="h-56 zoom cursor-pointer" onclick="book14.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">คัดหุ้นทำกำไรจากงบการเงิน</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 210.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1862</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 14 -->
+            <dialog id="book14" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D094260.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">คัดหุ้นทำกำไรจากงบการเงิน</p><br>
+                            <p>
+                                "คัดหุ้นทำกำไรจากงบการเงิน" เล่มนี้ ทำเรื่องการอ่านงบการเงิน การทำความเข้าใจงบการเงินให้ง่ายขึ้น เท่าที่จะง่ายขึ้นได้ คือใช้ภาษาธรรมดา เลี่ยงการใช้สมการหน้าตาเซ็กซี่ เน้นไปที่จุดที่น่าสนใจ เหมาะกับผู้ที่ต้องการอ่านงบการเงินให้เข้าใจมากขึ้น ซึ่งมันจะทำให้ตัวเลขและตัวอักษรปริศนาในงบการเงินจากที่ไม่เคยรู้เรื่อง หรือนึกไม่ถึงมาก่อน ถูกตีความอย่างง่ายดาย ราวกับอ่านนิยายแฟนตาซีเลยทีเดียว
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 210.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1862</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 15 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05622.jpg" class="h-56 zoom cursor-pointer" onclick="book15.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">7 ลูกค้าที่สร้างเงินล้านให้คุณ</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 202.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>528</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 15 -->
+            <dialog id="book15" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05622.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">7 ลูกค้าที่สร้างเงินล้านให้คุณ</p><br>
+                            <p>
+                                คุณเคยสงสัยไหมว่า ทำไมคุณถึงทำธุรกิจล้มเหลวไม่เป็นท่า หรือสิ่งที่คุณได้รับคือความสำเร็จเพียงน้อยนิด ทั้งที่คุณทำทุกอย่างตามที่กูรูระดับโลกบอก ทำทุกอย่างตามที่เหล่าเศรษฐีจำนวนมากบอก คำตอบง่ายมาก เพราะเศรษฐีและบรรดาคนมั่งมีเหล่านั้นบอกคุณไม่หมด เขาไม่ได้บอกแก่นแท้ในการหาเงิน ไม่ได้บอกความลับบางอย่างที่อาจทำให้ภาพลักษณ์ของเขาต้องมัวหมองให้กับคุณ
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 202.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>528</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 16 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D093768.jpg" class="h-56 zoom cursor-pointer" onclick="book16.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">สร้างพอร์ตลงทุนที่ตัวคุณมั่นใจ : Build Portfolio Your Way</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 211.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1711</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 16 -->
+            <dialog id="book16" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D093768.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">สร้างพอร์ตลงทุนที่ตัวคุณมั่นใจ : Build Portfolio Your Way</p><br>
+                            <p>
+                                ถ้าคุณเป็นคนหนึ่งในคนธรรมดาที่ต้องทำงานหาเงิน และคอยกังวลว่าจะมีเงินพอใช้ตอนแก่หรือเปล่า หนังสือเล่มนี้อาจเป็นสิ่งที่คุณตามหา นี่คือหนังสือที่จะช่วยให้เข้าใจการใช้พอร์ตลงทุนกระจายความเสี่ยง เพื่อให้ได้ผลตอบแทนที่คุ้มค่าที่สุด เรียนรู้ตอบแทนของหุ้น บอนด์ สินค้าโภคภัณฑ์ และกองทุนอต่างๆ ทั้งในและต่างประเทศอย่างเจาะลึก เข้าใจวิธีลงทุนที่ทำให้ประหยัดภาษีสูงสุด ตลอดจนรู้จัก 85ขั้นตอนการลงทุน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 211.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1711</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 17 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D096549.jpg" class="h-56 zoom cursor-pointer" onclick="book17.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">เก็งกำไรหุ้นด้วย 3 Indicators</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 211.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>831</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 17 -->
+            <dialog id="book17" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D096549.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">เก็งกำไรหุ้นด้วย 3 Indicators</p><br>
+                            <p>
+                                เก็งกำไรหุ้นด้วย 3 Indicators เป็นหนังสือสอนเทคนิคอลพื้นฐานที่เข้าใจง่าย เป็นขั้นเป็นตอน โดยเล่มนี้เขียนถึง Indicators ที่เหมาะกับนักลงทุนหลายสไตล์ เช่น การใช้ Volume มาประกอบการวิเคราะห์หุ้นแบบสายนักเก็งกำไร ที่ต้องการเทรดหุ้นเล็ก หรือเทรดสั้นมากขึ้น และยังมี Ichimoku Cloud ซึ่ง Indicators นี้แม้จะดูยิบย่อย แต่อันที่จริงการใช้งานไม่ได้ซับซ้อน แถมยังสามารถนำมาวิเคราะห์ใช้ประโยชน์ได้อย่างหลายแง่มุม
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 211.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>831</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 18 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D099555.jpg" class="h-56 zoom cursor-pointer" onclick="book18.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">รู้ทันอารมณ์ สร้างกำไรด้วยเหตุผล</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 211.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1555</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 18 -->
+            <dialog id="book18" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D099555.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">รู้ทันอารมณ์ สร้างกำไรด้วยเหตุผล</p><br>
+                            <p>
+                                 สิ่งที่เรามีคือ "เหตุผล" แต่สิ่งที่เราขาดคือ "จิตใจ" บ่อยครั้งที่เราใช้ "อารมณ์" ในการตัดสินใจมากกว่า "เหตุผล" การลงทุนที่ไม่รู้เท่าทันอารมณ์ ก็เลยกลายเป็นเหตุผลหนึ่งที่ทำให้เราขาดทุน และนี่คือที่มาของหนังสือเล่มนี้ ที่จะมาบอกเล่าหลากหลายเรื่องราวของจิตวิทยาการลงทุน เพื่อให้เรารู้เท่าทันอารมณ์ และตัดสินใจซื้อขายหุ้นด้วยเหตุผลมากขึ้น และจะทำให้คุณเข้าใจว่า ทำไมบ่อยครั้งที่เรามีความสามารถพิเศษ คัตที่ Low และกลับมาซื้อที่ High!
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 211.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1555</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 19 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA01437.jpg" class="h-56 zoom cursor-pointer" onclick="book19.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">วิธีเพิ่มเงิน 5.0 ที่เปลี่ยนชีวิตศิลปินตลกญี่ปุ่นจากหมื่นเป็น 30 ล้าน!</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 235.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>846</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 19 -->
+            <dialog id="book19" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA01437.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">วิธีเพิ่มเงิน 5.0 ที่เปลี่ยนชีวิตศิลปินตลกญี่ปุ่นจากหมื่นเป็น 30 ล้าน!</p><br>
+                            <p>
+                                 วิธีเพิ่มเงิน 5.0 ที่เปลี่ยนชีวิตศิลปินตลกญี่ปุ่นจากหมื่นเป็น 30 ล้าน!" เล่มนี้ นำเสนอวิธีที่สามารถประยุกต์ใช้ได้กับวิธีการเพิ่มเงินทุกแบบ ตั้งแต่การหยอดกระปุกไปจนถึงการลงทุน และหากคิดจะทำล่ะก็ ไม่ว่าใครก็สามารถทำได้ผลจริงทั้งนั้น! ซึ่งผู้เขียนได้รวบรวมวิธีจากประสบการณ์เพิ่มเงินในกระเป๋าของตัวเอง เพื่อส่งต่อความกล้าที่จะเริ่มเบิกเส้นทางให้กับชีวิต และความรู้เกี่ยวกับการเงินให้กับคนอื่นอีกหลาย ๆ คน หากเราเรียนรู้เรื่องนี้แล้ว จะทำให้เรามีความกล้าลงมือทำให้สิ่งที่อยากทำ
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 235.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>846</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 20 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA04915.jpg" class="h-56 zoom cursor-pointer" onclick="book20.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">โต้คลื่นหุ้น กวาดกำไรด้วยเทคนิค Wave Tunnel</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 220.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1431</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 20 -->
+            <dialog id="book20" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA04915.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">โต้คลื่นหุ้น กวาดกำไรด้วยเทคนิค Wave Tunnel</p><br>
+                            <p>
+                                โต้คลื่นหุ้น กวาดกำไรด้วยเทคนิค Wave Tunnel" เล่มนี้ จะเน้นเนื้อหาไปในทางการใช้กราฟเทคนิคที่เรียกว่า "Wave Tunnel" ซึ่งเป็นเทคนิคเฉพาะตัวของผู้เขียน ที่รวบรวมจากประสบการณ์ในการลงทุนในตลาดหุ้นเกือบ 20 กว่าปี นำมากลั่นกรองผสมผสานออกมาเป็นแนวทางในการซื้อขายหุ้น ในลักษณะจังหวะแตกต่างกัน 4 รูปแบบ ซึ่งครอบคลุมลักษณะการเคลื่อนที่ของราคาที่มีโอกาสเกิดขึ้นได้มากกว่า 60% อีกทั้งแนวทางของ Wave Tunnel ยังสามารถนำไปปรับใช้กับสินค้าอื่นได้อีกด้วย ไม่ว่าจะเป็น ราคาอนุพันธ์, SET50 Future, Warrant, Gold Spot หรือ Forex และยังปรับเพิ่มลด Time Frame สอดคล้องกับจังหวะการเทรดเร็วหรือเทรดช้าของแต่ละสไตล์ก็ได้เช่นกัน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 220.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1431</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 21 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA05730.jpg" class="h-56 zoom cursor-pointer" onclick="book21.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">TFEX SET50 Index Futures เทรดอย่างไรให้ได้กำไร</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 245.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>971</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 21 -->
+            <dialog id="book21" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA05730.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">TFEX SET50 Index Futures เทรดอย่างไรให้ได้กำไร</p><br>
+                            <p>
+                                เนื้อหาในหนังสือเล่มนี้ จะกล่าวถึง TFEX SET50 Index Futures ตลาดสัญญาซื้อขายล่วงหน้า เพื่อให้ผู้อ่านได้นำไปประกอบในการตัดสินใจเกี่ยวกับการลงทุน ซึ่งจะกล่าวเจาะจงเกี่ยวกับรายละเอียดต่างๆ ของ TFEX SET50 Index Futures ตั้งแต่เริ่มต้นจนถึงขั้นเทรดเป็น เทรดเก่ง เทรดได้ดีมีกำไร
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 245.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>971</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 22 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/DA04973.jpg" class="h-56 zoom cursor-pointer" onclick="book22.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">Swing Trade Game กลยุทธ์ทำกำไรหุ้นด้วย Swing Trade</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 238.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1111</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 22 -->
+            <dialog id="book22" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/DA04973.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">Swing Trade Game กลยุทธ์ทำกำไรหุ้นด้วย Swing Trade</p><br>
+                            <p>
+                                เปิดทุกเรื่องเพื่อการทำกำไรด้วย Swing Trade ครบทุกแนวคิด และสิ่งที่ต้องรู้ เครื่องมือ สัญญาณเชิงเทคนิค อัดแน่นและกลั่นกรองออกมาเป็นกลยุทธ์ พร้อม Case Study เพื่อให้เทรดเดอร์รู้ทันตลาดทุน ปลอดภัย และสร้างกำไรในการเทรด
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 238.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1111</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 23 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D094363.jpg" class="h-56 zoom cursor-pointer" onclick="book23.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">แผนการเทรดทำกำไรรายวัน Day Trade Survivor</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 356.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>213</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 23 -->
+            <dialog id="book23" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D094363.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">แผนการเทรดทำกำไรรายวัน Day Trade Survivor</p><br>
+                            <p>
+                                การศึกษาการลงทุนในหุ้นเชิงเทคนิคอล มีความสำคัญอย่างยิ่งในการจะเริ่มต้นลงทุนในหุ้นในตลาดหลักทรัพย์ เพราะแม้แต่หุ้นขนาดใหญ่กราฟราคาก็วิ่งตามเทคนิคอลทั้งนั้น หนังสือเล่มนี้จะพาคุณไปเรียนรู้พื้นฐานของเทคนิคอล และกราฟก่อนตัดสินใจการซื้อ-ขาย
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 356.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>213</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+            
+            <!-- Book 24 -->
+            <div class="p-4 border border-gray-200 rounded-2xl shadow-lg" data-aos="fade-up">
+                <img src="https://pim-cdn0.ofm.co.th/products/large/D097877.jpg" class="h-56 zoom cursor-pointer" onclick="book24.showModal()">
+                <p class="text-md font-bold px-2 pt-4 truncate">กลยุทธ์เทรดให้ชนะ กำไรท่าเดียว</p>
+                <p class="text-sm px-2 pb-2">การเงินและการลงทุน</p>
+                <hr class="py-1">
+                <div class="flex flex-row justify-between">
+                    <p class="text-lg font-bold">
+                        ฿ 247.00
+                    </p>
+                    <p>
+                        <i class="text-xs text-slate-400">ขายแล้ว <b>1001</b> เล่ม</i>
+                    </p>
+                </div>
+                <button class="btn btn-block btn-sm btn-info hover:bg-sky-500 active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 shadow-md" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+            </div>
+            <!-- Detail Book 24 -->
+            <dialog id="book24" class="modal">
+                <div class="modal-box w-11/12 max-w-5xl pt-10">
+                    <div class="grid grid-cols-2">
+                        <div><img src="https://pim-cdn0.ofm.co.th/products/large/D097877.jpg"></div>
+                        <div>
+                            <p class="text-2xl font-black">กลยุทธ์เทรดให้ชนะ กำไรท่าเดียว</p><br>
+                            <p>
+                                หนังสือเล่มนี้สำหรับคนที่อยากเล่นหุ้นอย่างจริงจัง เลือกที่จะสำเร็จในการลงทุน ต้องการให้หุ้นเป็นการลงทุนที่เปลี่ยนชีวิต ถ่ายทอดจากประสบการณ์ตรงของผู้เขียนที่เคยเทรดแล้วแพ้ตลาด กับความพยายามที่จะหาข้อผิดพลาด แล้วพลิกกลับมาเป็น "กำไรท่าเดียว" กลายเป็นกลยุทธ์ที่ทำให้ชนะตลาดจากการเทรด โดยอธิบายระบบการทำกำไรตั้งแต่ก่อนลงทุน การเริ่มลงทุน การปรับปรุง และหลังการลงทุน
+                            </p><br>
+                            <p class="text-2xl font-bold">฿ 247.00</p><br>
+                            <p class="text-xs text-slate-400">ขายแล้ว <b>1001</b> เล่ม</p>
+                            <p class="text-xs text-slate-400">คงเหลือ <b>111</b> เล่ม</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn bg-gray-300 shadow-sm">ยกเลิก</button>&emsp;
+                        </form>
+                        <button class="btn bg-sky-400 hover:bg-sky-500 focus:ring focus:ring-sky-300 shadow-sm" onclick="window.location='cart.html'"><i class="fas fa-cart-plus"></i> เพิ่มสินค้า</button>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
